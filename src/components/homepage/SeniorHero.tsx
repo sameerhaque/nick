@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button, Container, Section } from '@/components/ui'
-import { Phone, Shield, ArrowRight, CheckCircle } from 'lucide-react'
+import { Phone, ArrowRight, CheckCircle } from 'lucide-react'
 import { homepageContent } from '@/data/homepage-content'
 
 const { hero } = homepageContent
@@ -40,7 +40,7 @@ export function SeniorHero() {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl leading-relaxed">
-                  Access the wealth you've built in your home while continuing to live in it. 
+                  Access the wealth you&apos;ve built in your home while continuing to live in it. 
                   No monthly payments. No moving. Just financial freedom.
                 </p>
               </motion.div>
@@ -137,8 +137,8 @@ export function SeniorHero() {
                     </div>
                     
                     <blockquote className="text-neutral-700 leading-relaxed">
-                      "I can finally afford the home repairs and still have money for my grandchildren. 
-                      Best financial decision I've made."
+                      &ldquo;I can finally afford the home repairs and still have money for my grandchildren. 
+                      Best financial decision I&apos;ve made.&rdquo;
                     </blockquote>
                     
                     <div className="flex items-center justify-between">

@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 }
 
 // Placeholder functions - replace with real implementations
-async function sendNotificationEmail(data: any) {
+async function sendNotificationEmail(data: z.infer<typeof partnerFormSchema>) {
   // TODO: Implement actual email sending
   // Example: Send to partners@reversewayhome.com
   console.log('Would send notification email:', data)
@@ -96,21 +96,22 @@ function generateSubmissionId(): string {
 }
 
 // Rate limiting helper (basic implementation)
-const submissions = new Map()
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now()
-  const windowMs = 15 * 60 * 1000 // 15 minutes
-  const maxSubmissions = 3
-  
-  const userSubmissions = submissions.get(ip) || []
-  const recentSubmissions = userSubmissions.filter((time: number) => now - time < windowMs)
-  
-  if (recentSubmissions.length >= maxSubmissions) {
-    return true
-  }
-  
-  recentSubmissions.push(now)
-  submissions.set(ip, recentSubmissions)
-  return false
-}
+// Note: This function is defined for future use but not currently called
+// const submissions = new Map()
+//
+// function isRateLimited(ip: string): boolean {
+//   const now = Date.now()
+//   const windowMs = 15 * 60 * 1000 // 15 minutes
+//   const maxSubmissions = 3
+//   
+//   const userSubmissions = submissions.get(ip) || []
+//   const recentSubmissions = userSubmissions.filter((time: number) => now - time < windowMs)
+//   
+//   if (recentSubmissions.length >= maxSubmissions) {
+//     return true
+//   }
+//   
+//   recentSubmissions.push(now)
+//   submissions.set(ip, recentSubmissions)
+//   return false
+// }

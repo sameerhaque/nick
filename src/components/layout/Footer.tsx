@@ -148,7 +148,7 @@ export function Footer() {
               <strong>Important:</strong> This material has not been reviewed, approved or issued by FSRA or any government agency. 
               The company is not affiliated with or acting on behalf of or at the direction of FSRA or any other government agency. 
               Not all borrowers will qualify for a reverse mortgage. Borrower must occupy home as primary residence and remain current on property taxes, 
-              homeowner's insurance, and home maintenance. Credit subject to age, minimum income guidelines, creditworthiness, and property eligibility. 
+              homeowner&apos;s insurance, and home maintenance. Credit subject to age, minimum income guidelines, creditworthiness, and property eligibility. 
               Program rates, fees, terms and conditions are subject to change and provincial regulations.
             </p>
           </div>

@@ -52,7 +52,7 @@ export function PartnerTestimonials() {
                 <Quote className="w-12 h-12 text-primary-200 mb-6" />
                 
                 <p className="text-xl md:text-2xl text-neutral-700 mb-8 leading-relaxed">
-                  "{testimonials.items[currentIndex].quote}"
+                  &ldquo;{testimonials.items[currentIndex].quote}&rdquo;
                 </p>
 
                 <div className="flex items-center">

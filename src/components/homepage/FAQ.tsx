@@ -107,15 +107,15 @@ export function FAQ() {
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 mb-6 border border-blue-100">
             <MessageCircle className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-blue-700">Let's Have a Real Conversation</span>
+            <span className="text-sm font-medium text-blue-700">Let&apos;s Have a Real Conversation</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-neutral-900">
-            Questions You're Actually Thinking
+            Questions You&apos;re Actually Thinking
           </h2>
           <p className="text-xl text-neutral-600 leading-relaxed">
             Forget formal FAQs. Here are the real conversations we have with people just like you. 
-            These are the questions that matter, answered the way you'd want to hear them.
+            These are the questions that matter, answered the way you&apos;d want to hear them.
           </p>
         </motion.div>
 
@@ -149,7 +149,7 @@ export function FAQ() {
 
                 {/* Conversations */}
                 <div className="space-y-6">
-                  {topic.conversations.map((conversation, convIndex) => {
+                  {topic.conversations.map((conversation) => {
                     const conversationId = `${topic.id}-${conversation.id}`
                     const isOpen = activeConversation === conversationId
                     
@@ -171,7 +171,7 @@ export function FAQ() {
                             <div className="flex-1">
                               <div className="bg-neutral-100 rounded-2xl rounded-tl-sm p-4">
                                 <p className="text-lg text-neutral-800 leading-relaxed">
-                                  "{conversation.question}"
+                                  &ldquo;{conversation.question}&rdquo;
                                 </p>
                               </div>
                             </div>
@@ -241,7 +241,7 @@ export function FAQ() {
             
             <p className="text-lg text-neutral-700 mb-8 leading-relaxed max-w-2xl mx-auto">
               These are just the starting points. Every situation is unique, and you probably have 
-              questions we haven't covered here. Let's talk about YOUR specific situation.
+              questions we haven&apos;t covered here. Let&apos;s talk about YOUR specific situation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -250,7 +250,7 @@ export function FAQ() {
                 className="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               >
                 <Phone className="w-5 h-5" />
-                Let's Talk: (855) 555-7378
+                Let&apos;s Talk: (855) 555-7378
               </a>
               
               <a 

@@ -25,7 +25,7 @@ export default function ThankYouPartnerPage() {
 
             {/* Subheading */}
             <p className="text-xl text-neutral-600 mb-12 max-w-2xl mx-auto">
-              We've received your partner application and are excited to explore 
+              We&apos;ve received your partner application and are excited to explore 
               how we can work together to help seniors access their home equity.
             </p>
 
@@ -53,7 +53,7 @@ export default function ThankYouPartnerPage() {
                   <div>
                     <h3 className="font-bold mb-1">Schedule a Call</h3>
                     <p className="text-neutral-600">
-                      We'll reach out within 48 hours to schedule a brief introductory call 
+                      We&apos;ll reach out within 48 hours to schedule a brief introductory call 
                       to discuss your practice and our partnership program.
                     </p>
                   </div>
@@ -66,7 +66,7 @@ export default function ThankYouPartnerPage() {
                   <div>
                     <h3 className="font-bold mb-1">Get Started</h3>
                     <p className="text-neutral-600">
-                      Once approved, you'll receive access to our partner portal, training 
+                      Once approved, you&apos;ll receive access to our partner portal, training 
                       materials, and marketing resources.
                     </p>
                   </div>

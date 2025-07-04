@@ -96,7 +96,7 @@ export function HowItWorks() {
               <h3 className="text-2xl font-bold mb-4 text-neutral-900">Ready to Get Started?</h3>
               <p className="text-neutral-600 mb-6 leading-relaxed">
                 Take the first step with a free, no-obligation consultation. 
-                We'll answer your questions and see if this makes sense for your situation.
+                We&apos;ll answer your questions and see if this makes sense for your situation.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
