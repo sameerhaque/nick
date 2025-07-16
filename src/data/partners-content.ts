@@ -15,7 +15,7 @@ export const partnersContent = {
       },
       {
         id: 2,
-        quote: "As a realtor, I often work with seniors considering downsizing. Now I can offer them an alternative that lets them stay in their homes. The support from the team is outstanding.",
+        quote: "As a realtor, I can now offer my senior clients an alternative to downsizing that helps them stay in their homes. This service has increased my commission opportunities and strengthened my client relationships.",
         author: "James Rodriguez",
         title: "Senior Real Estate Specialist",
         company: "Premier Realty Group",
@@ -23,7 +23,7 @@ export const partnersContent = {
       },
       {
         id: 3,
-        quote: "The educational resources and training provided have made me confident in discussing reverse mortgages with my clients. The referral income is a great bonus.",
+        quote: "The educational resources and training provided have made me confident in discussing reverse mortgages with my clients. The $450 referral fee opportunity has been a valuable addition to my practice.",
         author: "Patricia Chen",
         title: "CPA",
         company: "Chen & Associates",
@@ -49,7 +49,7 @@ export const partnersContent = {
       {
         id: "realtor",
         title: "Realtors",
-        description: "Offer aging-in-place alternatives to downsizing for senior clients.",
+        description: "Help your clients stay in their homes while you earn more commission from increased real estate sales through expanded service offerings.",
         color: "text-success-600",
         bgColor: "bg-success-50",
         borderColor: "border-success-200",
@@ -84,9 +84,9 @@ export const partnersContent = {
   incentives: {
     title: "Earn More Than Just Commissions",
     mainIncentive: {
-      amount: "$500",
-      description: "Minimum Per Referral",
-      subtitle: "Higher commissions available for volume partners"
+      amount: "$450",
+      description: "Maximum Per Referral",
+      subtitle: "For qualified mortgages $200k or more"
     },
     benefits: [
       {
@@ -109,7 +109,7 @@ export const partnersContent = {
       }
     ],
     cta: {
-      text: "Join our network today and start earning within 30 days"
+      text: "Join our network today and start earning referral income"
     }
   },
 
@@ -128,8 +128,8 @@ export const partnersContent = {
         description: "Track your referrals through our partner portal"
       },
       {
-        title: "Guaranteed Commissions",
-        description: "Get paid within 30 days of closing"
+        title: "Reliable Commissions",
+        description: "Get paid 2-3 weeks after closing for processing"
       }
     ],
     disclaimer: "By submitting this form, you agree to our Terms of Service and Privacy Policy."

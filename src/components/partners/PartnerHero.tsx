@@ -77,16 +77,16 @@ export function PartnerHero() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary-400 mb-2">$500+</div>
-              <div className="text-primary-100">Per Referral</div>
+              <div className="text-3xl font-bold text-secondary-400 mb-2">$450</div>
+              <div className="text-primary-100">Max Per Referral</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-secondary-400 mb-2">48hr</div>
               <div className="text-primary-100">Lead Response Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-secondary-400 mb-2">100%</div>
-              <div className="text-primary-100">Commission Guarantee</div>
+              <div className="text-3xl font-bold text-secondary-400 mb-2">$200k+</div>
+              <div className="text-primary-100">Minimum Mortgage</div>
             </div>
           </motion.div>
         </motion.div>

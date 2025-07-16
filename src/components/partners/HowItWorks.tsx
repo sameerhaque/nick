@@ -22,7 +22,7 @@ const steps = [
   {
     icon: DollarSign,
     title: 'Get Rewarded',
-    description: 'Earn a minimum $500 commission for every successful reverse mortgage referral.',
+    description: 'Earn up to $450 referral fee for every successful reverse mortgage referral on mortgages $200k or more.',
     color: 'text-secondary-600',
     bgColor: 'bg-secondary-50',
   },
