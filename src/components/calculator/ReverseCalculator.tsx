@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button, Card, Container, Section } from '@/components/ui'
 import { Calculator, ArrowRight, Home, Users, DollarSign } from 'lucide-react'
@@ -55,7 +55,7 @@ export function ReverseCalculator() {
   const [error, setError] = useState<string | null>(null)
   const [showLeadForm, setShowLeadForm] = useState(false)
 
-  const handleInputChange = (field: keyof FormData, value: any) => {
+  const handleInputChange = (field: keyof FormData, value: string | number | undefined) => {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
@@ -90,9 +90,10 @@ export function ReverseCalculator() {
 
       const calculationResult = await calculateReverseAmountAPI(inputs)
       setResult(calculationResult)
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Calculation error:', error)
-      setError(error.message || 'An error occurred during calculation. Please try again.')
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred during calculation. Please try again.'
+      setError(errorMessage)
     } finally {
       setIsCalculating(false)
     }

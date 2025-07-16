@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Type, Minus, Plus, Contrast, Volume2, RotateCcw } from 'lucide-react'
+import { Type, Minus, Plus, Contrast, RotateCcw } from 'lucide-react'
 
 interface AccessibilityControlsProps {
   onFontSizeChange?: (size: number) => void

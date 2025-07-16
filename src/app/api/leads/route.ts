@@ -2,7 +2,22 @@ import { NextRequest, NextResponse } from 'next/server'
 import { LeadCaptureSchema, logError, AppError } from '@/lib/errors'
 
 // Simple in-memory storage for demo (use database in production)
-const leadsStorage: any[] = []
+interface LeadRecord {
+  id: string;
+  email: string;
+  phone: string;
+  timestamp: number;
+  createdAt: string;
+  clientId: string;
+  source: string;
+  status: string;
+  followUpDate: string;
+  calculationId?: string;
+  preferredContact?: string;
+  bestTimeToCall?: string;
+}
+
+const leadsStorage: LeadRecord[] = []
 
 // Rate limiting for lead submissions
 const leadRateLimitMap = new Map<string, { count: number; resetTime: number }>()
@@ -142,7 +157,7 @@ export async function POST(request: NextRequest) {
     
     // Handle Zod validation errors
     if (error && typeof error === 'object' && 'errors' in error) {
-      const zodError = error as any
+      const zodError = error as { errors: Array<{ message: string; path?: string[] }> }
       const firstError = zodError.errors[0]
       return NextResponse.json(
         { 

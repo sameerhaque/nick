@@ -51,20 +51,20 @@ export const homepageContent = {
   // How It Works - Educational focus
   howItWorks: {
     title: "How a Reverse Mortgage Works",
-    subtitle: "A simple, government-insured way to access your home's value while continuing to live in it.",
+    subtitle: "A simple, provincially-regulated way to access your home's value while continuing to live in it.",
     steps: [
       {
         id: "qualify",
         number: "1",
         title: "See If You Qualify",
-        description: "Must be 62+, own your home, and have sufficient equity. Our free consultation determines your eligibility.",
+        description: "Must be 55+, own your home, and have sufficient equity. Our free consultation determines your eligibility.",
         icon: "UserCheck"
       },
       {
         id: "learn",
         number: "2", 
         title: "Get Educated & Counseled",
-        description: "Receive required HUD counseling and detailed explanations. No obligation to proceed after learning.",
+        description: "Receive required financial counseling and detailed explanations. No obligation to proceed after learning.",
         icon: "BookOpen"
       },
       {
@@ -75,7 +75,7 @@ export const homepageContent = {
         icon: "DollarSign"
       }
     ],
-    disclaimer: "This material has not been reviewed, approved or issued by HUD, FHA or any government agency."
+    disclaimer: "This material has not been reviewed, approved or issued by OSFI, FSRA or any government agency."
   },
 
   // Key Benefits - What matters to seniors  
@@ -100,14 +100,14 @@ export const homepageContent = {
       {
         id: "tax-free",
         title: "Tax-Free Income",
-        description: "Reverse mortgage proceeds are typically not considered taxable income by the IRS.",
+        description: "Reverse mortgage proceeds are typically not considered taxable income by the CRA.",
         icon: "Receipt",
         highlight: false
       },
       {
-        id: "government-insured",
-        title: "FHA Insurance Protection", 
-        description: "Most reverse mortgages are insured by the Federal Housing Administration for your protection.",
+        id: "provincially-regulated",
+        title: "Provincial Insurance Protection", 
+        description: "Most reverse mortgages are regulated by provincial financial authorities for your protection.",
         icon: "Shield",
         highlight: false
       },
@@ -142,7 +142,7 @@ export const homepageContent = {
       {
         id: "counseling",
         title: "Required Independent Counseling",
-        description: "HUD-approved counselors explain all aspects before you sign. This protects your interests.",
+        description: "Licensed financial counselors explain all aspects before you sign. This protects your interests.",
         icon: "Users"
       },
       {
@@ -170,7 +170,7 @@ export const homepageContent = {
         quote: "We eliminated our $1,200 monthly mortgage payment and now receive $850 per month. It's like getting a $2,000 raise every month.",
         author: "Mary & Robert Thompson",
         age: "Ages 68 & 70",
-        location: "Sacramento, CA",
+        location: "Toronto, ON",
         benefit: "Eliminated mortgage payment + monthly income",
         image: "/images/testimonials/thompson-couple.jpg"
       },
@@ -179,7 +179,7 @@ export const homepageContent = {
         quote: "My adult children were initially worried, but after learning about the protections and counseling, they're completely supportive. It's given me the financial freedom I needed.",
         author: "Dorothy Martinez",
         age: "Age 72",
-        location: "Phoenix, AZ", 
+        location: "Vancouver, BC", 
         benefit: "Financial independence + family peace of mind",
         image: "/images/testimonials/dorothy-martinez.jpg"
       },
@@ -188,7 +188,7 @@ export const homepageContent = {
         quote: "The counseling process really educated us. We felt comfortable knowing we'd never owe more than our home's worth and could stay here as long as we want.",
         author: "Frank & Susan Chen",
         age: "Ages 65 & 63",
-        location: "Denver, CO",
+        location: "Calgary, AB",
         benefit: "Education + security + staying in home",
         image: "/images/testimonials/chen-couple.jpg"
       }
@@ -252,14 +252,14 @@ export const homepageContent = {
     company: {
       name: "Reverse Way Home",
       founded: "2003",
-      nmls: "NMLS #123456",
+      license: "FSRA #123456",
       bbb: "A+",
       clientsServed: "10,000+",
-      states: "Licensed in 48 states"
+      provinces: "Licensed across Canada"
     },
     certifications: [
-      "FHA-Approved Lender",
-      "HUD-Registered Counseling Provider", 
+      "FSRA-Licensed Lender",
+      "Provincial-Registered Counseling Provider", 
       "NRMLA Member",
       "Better Business Bureau A+ Rating"
     ],
@@ -269,7 +269,7 @@ export const homepageContent = {
       expertise: [
         "20+ Years Industry Experience",
         "Certified Reverse Mortgage Professionals",
-        "HUD-Approved Counselors on Staff",
+        "Licensed Financial Counselors on Staff",
         "Multilingual Support Available"
       ]
     }

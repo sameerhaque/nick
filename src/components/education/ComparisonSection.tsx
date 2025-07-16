@@ -21,7 +21,7 @@ const comparisonData = [
   },
   {
     category: 'Age Requirements',
-    reversemortgage: { status: 'neutral', text: 'Must be 62+ years old' },
+    reversemortgage: { status: 'neutral', text: 'Must be 55+ years old' },
     heloc: { status: 'positive', text: 'No age requirements' },
     selling: { status: 'positive', text: 'No age requirements' },
     traditional: { status: 'positive', text: 'No age requirements' }
@@ -72,12 +72,12 @@ const alternatives = [
       'No monthly payments',
       'Remain in your home',
       'No income requirements',
-      'Government-insured options'
+      'Provincially-regulated options'
     ],
     cons: [
       'Interest compounds over time',
       'Reduces home equity',
-      'Age 62+ requirement',
+      'Age 55+ requirement',
       'Ongoing property obligations'
     ],
     bestFor: 'Seniors who want to stay in their home and need additional income'
@@ -161,7 +161,7 @@ export function ComparisonSection() {
           </h2>
           <p className="text-xl text-gray-600">
             Understanding how reverse mortgages compare to other financial options 
-            helps you make an informed decision that's right for your situation.
+            helps you make an informed decision that&apos;s right for your situation.
           </p>
         </motion.div>
 

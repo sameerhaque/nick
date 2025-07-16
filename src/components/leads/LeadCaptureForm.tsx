@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Card } from '@/components/ui'
-import { Phone, Mail, Clock, Shield, Check } from 'lucide-react'
+import { Shield, Check } from 'lucide-react'
 import { LeadCaptureSchema, type LeadCaptureData } from '@/lib/errors'
 import { ComplianceDisclaimer } from '@/components/compliance/ComplianceDisclaimer'
 
@@ -57,8 +57,9 @@ export function LeadCaptureForm({ calculationId, estimatedAmount, onSubmit }: Le
 
       setIsSubmitted(true)
       onSubmit?.(data)
-    } catch (error: any) {
-      setSubmitError(error.message || 'An error occurred. Please try again.')
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An error occurred. Please try again.'
+      setSubmitError(errorMessage)
     } finally {
       setIsSubmitting(false)
     }
@@ -78,13 +79,13 @@ export function LeadCaptureForm({ calculationId, estimatedAmount, onSubmit }: Le
           
           <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
           <p className="text-gray-600 mb-6">
-            We've received your information and will contact you within 24 hours to discuss your 
+            We&apos;ve received your information and will contact you within 24 hours to discuss your 
             personalized reverse mortgage illustration.
           </p>
           
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <p className="text-sm text-blue-800">
-              <strong>What's next:</strong> A licensed mortgage professional will call you to verify 
+              <strong>What&apos;s next:</strong> A licensed mortgage professional will call you to verify 
               your information and schedule a consultation at your convenience.
             </p>
           </div>
@@ -108,7 +109,7 @@ export function LeadCaptureForm({ calculationId, estimatedAmount, onSubmit }: Le
         <h2 className="text-3xl font-bold mb-4">Get Your Personalized Illustration</h2>
         <p className="text-xl text-gray-600">
           Based on your estimate of <strong>${estimatedAmount.toLocaleString()}</strong>, 
-          let's get you detailed information about your reverse mortgage options.
+          let&apos;s get you detailed information about your reverse mortgage options.
         </p>
       </div>
 

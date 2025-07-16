@@ -96,7 +96,7 @@ export function RiskDisclosure() {
             Understand the Risks
           </h2>
           <p className="text-xl text-gray-600">
-            While reverse mortgages can provide valuable financial flexibility, it's important to understand 
+            While reverse mortgages can provide valuable financial flexibility, it&apos;s important to understand 
             the potential risks and costs involved. This information is required by law.
           </p>
         </motion.div>
@@ -190,8 +190,8 @@ export function RiskDisclosure() {
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto">
             <h3 className="font-bold text-blue-900 mb-4">Required Counseling</h3>
             <p className="text-blue-800 text-sm leading-relaxed">
-              Before obtaining a reverse mortgage, you must receive counseling from a HUD-approved 
-              counseling agency. This free service helps ensure you understand all aspects of the loan.
+              Before obtaining a reverse mortgage, you must receive counseling from a licensed 
+              financial counseling agency. This free service helps ensure you understand all aspects of the loan.
             </p>
           </div>
         </motion.div>

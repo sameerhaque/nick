@@ -39,7 +39,7 @@ export function CalculatorSection() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-            Discover Your Home's Hidden Value
+            Discover Your Home&apos;s Hidden Value
           </h2>
           
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">

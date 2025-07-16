@@ -6,8 +6,7 @@ import {
   CalculationError, 
   RateLimitError,
   AppError,
-  logError,
-  getErrorMessage
+  logError
 } from '@/lib/errors'
 
 // Rate limiting (in production, use Redis or similar)
@@ -122,7 +121,7 @@ export async function POST(request: NextRequest) {
 
     // Handle Zod validation errors
     if (error && typeof error === 'object' && 'errors' in error) {
-      const zodError = error as any
+      const zodError = error as { errors: Array<{ message: string; path?: string[] }> }
       const firstError = zodError.errors[0]
       return NextResponse.json(
         { 

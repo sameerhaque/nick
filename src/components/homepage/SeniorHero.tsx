@@ -165,8 +165,8 @@ export function SeniorHero() {
         >
           <div className="max-w-4xl mx-auto">
             <p className="text-sm text-neutral-500 leading-relaxed">
-              <strong>Important:</strong> This material has not been reviewed by HUD or FHA. 
-              Consult with an independent HUD-approved counselor before proceeding. 
+              <strong>Important:</strong> This material has not been reviewed by OSFI or FSRA. 
+              Consult with an independent licensed financial counselor before proceeding. 
               <a href="#disclosures" className="text-primary-600 hover:text-primary-700 underline">
                 View disclosures
               </a>
