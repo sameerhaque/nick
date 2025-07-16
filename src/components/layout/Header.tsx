@@ -8,6 +8,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
+    { name: 'Calculator', href: '/calculator' },
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Benefits', href: '#benefits' },
     { name: 'FAQ', href: '#faq' },

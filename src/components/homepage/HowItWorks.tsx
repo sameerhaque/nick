@@ -75,7 +75,7 @@ export function HowItWorks() {
                     <div className="inline-flex items-center gap-2 bg-neutral-50 rounded-full px-3 py-1">
                       <div className="w-2 h-2 bg-primary-600 rounded-full" />
                       <span className="text-sm font-medium text-neutral-700">
-                        {index === 0 ? '1-2 days' : index === 1 ? '2-3 weeks' : 'Same day'}
+                        {index === 0 ? 'same day' : index === 1 ? '2-3 weeks' : 'Same day'}
                       </span>
                     </div>
                   </div>

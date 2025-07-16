@@ -1,11 +1,15 @@
 import { Metadata } from 'next'
 import {
   SeniorHero,
+  CalculatorSection,
+  WhatIsSection,
   HowItWorks,
   Benefits,
   ClientTestimonials,
   FAQ,
-  Contact
+  Contact,
+  RiskDisclosure,
+  ComparisonSection
 } from '@/components/homepage'
 
 export const metadata: Metadata = {
@@ -41,8 +45,12 @@ export default function HomePage() {
   return (
     <main id="main">
       <SeniorHero />
+      <CalculatorSection />
+      <WhatIsSection />
       <HowItWorks />
       <Benefits />
+      <ComparisonSection />
+      <RiskDisclosure />
       <ClientTestimonials />
       <FAQ />
       <Contact />

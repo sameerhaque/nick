@@ -1,0 +1,162 @@
+/* High contrast mode styles */
+.high-contrast {
+  --primary-color: #0066cc;
+  --primary-hover: #0052a3;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --border-color: #000000;
+  --secondary-color: #333333;
+  --error-color: #cc0000;
+  --success-color: #009900;
+}
+
+.high-contrast * {
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+.high-contrast button {
+  border: 2px solid var(--border-color) !important;
+  color: var(--background-color) !important;
+  background-color: var(--primary-color) !important;
+}
+
+.high-contrast button:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+.high-contrast input {
+  border: 2px solid var(--border-color) !important;
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+.high-contrast input:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3) !important;
+}
+
+/* Focus indicators for keyboard navigation */
+.high-contrast *:focus {
+  outline: 3px solid var(--primary-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* Enhanced text readability */
+.high-contrast {
+  font-weight: 600;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6 {
+  font-weight: 800;
+}
+
+/* Error states */
+.high-contrast .error,
+.high-contrast .text-red-600,
+.high-contrast .text-red-500 {
+  color: var(--error-color) !important;
+  font-weight: 700 !important;
+}
+
+/* Success states */
+.high-contrast .success,
+.high-contrast .text-green-600,
+.high-contrast .text-green-500 {
+  color: var(--success-color) !important;
+  font-weight: 700 !important;
+}
+
+/* Remove background colors that interfere with high contrast */
+.high-contrast .bg-gray-50,
+.high-contrast .bg-gray-100,
+.high-contrast .bg-primary-50,
+.high-contrast .bg-blue-50,
+.high-contrast .bg-amber-50,
+.high-contrast .bg-red-50,
+.high-contrast .bg-green-50 {
+  background-color: var(--background-color) !important;
+}
+
+/* Senior-friendly typography */
+.senior-friendly {
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+.senior-friendly input {
+  font-size: 20px;
+  padding: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.senior-friendly button {
+  font-size: 20px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 56px;
+  min-width: 120px;
+}
+
+.senior-friendly .form-group {
+  margin-bottom: 24px;
+}
+
+.senior-friendly label {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Keyboard navigation enhancements */
+*:focus {
+  outline: 3px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Print styles for seniors who want to print information */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 14pt;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+}
