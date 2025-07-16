@@ -44,8 +44,8 @@ export function Header() {
               <Phone className="w-4 h-4" />
               <span>(416) 555-7378</span>
             </a>
-            <Button href="/free-kit" size="sm">
-              Free Info Kit
+            <Button href="/calculator" size="sm">
+              Calculator
             </Button>
           </div>
 
@@ -89,8 +89,8 @@ export function Header() {
                   <span>(416) 555-7378</span>
                 </a>
                 <div className="px-3">
-                  <Button href="/free-kit" size="sm" className="w-full">
-                    Get Free Information Kit
+                  <Button href="/calculator" size="sm" className="w-full">
+                    Calculate Your Amount
                   </Button>
                 </div>
               </div>

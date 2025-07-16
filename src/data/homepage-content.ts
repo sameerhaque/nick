@@ -7,8 +7,8 @@ export const homepageContent = {
     phoneNumber: "(416) 555-7378",
     phoneText: "Call for Free Consultation",
     ctaPrimary: {
-      text: "Get Your Free Information Kit",
-      href: "/free-kit"
+      text: "Calculate Your Amount",
+      href: "/calculator"
     },
     ctaSecondary: {
       text: "Schedule Free Consultation",
@@ -291,11 +291,11 @@ export const homepageContent = {
         primary: true
       },
       {
-        id: "kit",
-        title: "Free Information Kit",
-        description: "Complete guide mailed to your home",
-        action: "Request Free Kit",
-        icon: "Mail",
+        id: "calculator",
+        title: "Free Calculator",
+        description: "Get your estimate in minutes",
+        action: "Calculate Now",
+        icon: "Calculator",
         primary: false
       },
       {

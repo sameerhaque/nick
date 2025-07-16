@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Container, Section, Button } from '@/components/ui'
-import { Phone, Mail, Calendar, CheckCircle } from 'lucide-react'
+import { Phone, Mail, Calendar, CheckCircle, Calculator } from 'lucide-react'
 import { homepageContent } from '@/data/homepage-content'
 
 const { contact } = homepageContent
@@ -11,7 +11,8 @@ const { contact } = homepageContent
 const iconMap = {
   Phone,
   Mail,
-  Calendar
+  Calendar,
+  Calculator
 }
 
 export function Contact() {

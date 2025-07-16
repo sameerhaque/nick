@@ -79,7 +79,7 @@ export function CalculatorSection() {
             <Button 
               size="lg" 
               href="/calculator"
-              className="group bg-white text-primary-700 hover:bg-gray-50 border-2 border-primary-200"
+              className="group bg-primary-600 text-white hover:bg-primary-700 border-2 border-primary-600 shadow-lg"
             >
               Calculate Your Amount
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

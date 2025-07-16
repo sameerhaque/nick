@@ -65,7 +65,7 @@ export function SeniorHero() {
                   size="lg"
                   className="text-lg px-8 py-4 border-2"
                 >
-                  Free Information Kit
+                  {hero.ctaPrimary.text}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </motion.div>

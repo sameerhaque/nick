@@ -107,10 +107,10 @@ export function HowItWorks() {
                   Call (855) 555-7378
                 </a>
                 <a 
-                  href="/free-kit"
+                  href="/calculator"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-50 text-primary-600 border border-primary-200 px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
-                  Get Free Kit
+                  Calculate Now
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </div>

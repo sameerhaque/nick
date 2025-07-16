@@ -191,10 +191,10 @@ export function Benefits() {
                     Call (416) 555-7378
                   </a>
                   <a 
-                    href="/free-kit"
+                    href="/calculator"
                     className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-200"
                   >
-                    Get Free Information Kit
+                    Calculate Your Amount
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </div>

@@ -69,8 +69,8 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/free-kit" className="text-neutral-300 hover:text-white transition-colors">
-                    Free Information Kit
+                  <a href="/calculator" className="text-neutral-300 hover:text-white transition-colors">
+                    Calculator
                   </a>
                 </li>
                 <li>
