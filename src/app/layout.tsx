@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import { Header, Footer } from '@/components/layout'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://reversewayhome.com'),
   title: 'Reverse Way Home | Unlock Your Home Equity',
   description: 'Discover how a reverse mortgage can provide tax-free retirement income. Provincially-regulated program. No monthly payments. Free consultation.',
   keywords: 'reverse mortgage, home equity, retirement income, senior financing, Canadian reverse mortgage',

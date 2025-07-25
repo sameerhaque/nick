@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Container, Section, Card } from '@/components/ui'
-import { DollarSign, Home, Heart, TrendingUp } from 'lucide-react'
+import { DollarSign, TrendingUp } from 'lucide-react'
+import Image from 'next/image'
 
 const customerStory = {
   name: "Sarah M.", 
@@ -39,11 +40,11 @@ export function CustomerStorySection() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-              Real Story: A Cushion Against Rising Costs
+              Real Impact Stories: When Equity Becomes Freedom
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how Sarah used a reverse mortgage to maintain her independence while 
-              addressing the financial challenges of rising living costs.
+              Discover how Sarah transformed her home equity into financial independence, 
+              creating a secure foundation for her golden years.
             </p>
           </motion.div>
 
@@ -58,14 +59,32 @@ export function CustomerStorySection() {
               {/* Customer Profile */}
               <Card className="p-6 bg-white border-l-4 border-l-blue-600">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center">
-                    <Home className="w-8 h-8 text-blue-600" />
-                  </div>
+                  <Image 
+                    src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                    alt="Confident senior woman at home, representing Sarah M. who found financial freedom through reverse mortgage"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 rounded-full object-cover border-4 border-blue-200 shadow-md"
+                    priority={false}
+                    unoptimized={false}
+                  />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{customerStory.name}</h3>
                     <p className="text-gray-600">Age {customerStory.age} • {customerStory.location}</p>
                     <p className="text-sm text-gray-500">{customerStory.yearInHome} years in her home</p>
                   </div>
+                </div>
+
+                {/* Beautiful home image */}
+                <div className="mb-6 relative">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Beautiful Canadian family home with mature landscaping, representing decades of memories and $1.8M value"
+                    width={800}
+                    height={400}
+                    className="w-full h-48 object-cover rounded-lg"
+                    priority={false}
+                  />
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -131,9 +150,13 @@ export function CustomerStorySection() {
               {/* Customer Quote */}
               <Card className="p-8 bg-white border-2 border-blue-100">
                 <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Heart className="w-10 h-10 text-blue-600" />
-                  </div>
+                  <Image 
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                    alt="Joyful senior woman with genuine smile, radiating confidence and satisfaction from financial security"
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-blue-200 shadow-lg"
+                  />
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Customer Testimonial</h3>
                 </div>
 
@@ -156,6 +179,23 @@ export function CustomerStorySection() {
                 <p className="text-blue-100 leading-relaxed">
                   {customerStory.outcome}
                 </p>
+              </Card>
+
+              {/* Financial Security Image */}
+              <Card className="p-4 bg-white">
+                <div className="relative mb-4">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1527788263495-3518893dcbb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                    alt="Senior woman enjoying coffee and reading peacefully at home, representing freedom and independence"
+                    width={400}
+                    height={200}
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                <div className="text-center">
+                  <div className="text-sm font-semibold text-gray-700">Freedom to Enjoy Life</div>
+                  <div className="text-xs text-gray-500">When equity becomes independence</div>
+                </div>
               </Card>
 
               {/* Key Stats */}

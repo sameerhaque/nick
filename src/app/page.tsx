@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: 'Stay in your home and access tax-free income with a provincially-regulated reverse mortgage. No monthly payments required. Free consultation for homeowners 55+.',
   keywords: 'reverse mortgage, seniors, home equity, retirement income, Canadian reverse mortgage, no monthly payments',
   authors: [{ name: 'Reverse Way Home' }],
+  metadataBase: new URL('https://reversewayhome.com'),
   openGraph: {
     title: 'Reverse Mortgage for Seniors 55+ | Access Home Equity',
     description: 'Stay in your home and access tax-free income with a provincially-regulated reverse mortgage.',
