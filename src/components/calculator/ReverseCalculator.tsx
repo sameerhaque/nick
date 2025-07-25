@@ -10,7 +10,7 @@ import { LeadCaptureForm } from '@/components/leads/LeadCaptureForm'
 
 interface FormData {
   province: string
-  city: string
+  postalCode: string
   propertyValue: number
   mortgageBalance: number
   primaryAge: number
@@ -32,9 +32,9 @@ const provinces = [
 ]
 
 const steps = [
-  { id: 'location', title: 'Location', icon: Home },
+  { id: 'location', title: 'Location & Age', icon: Home },
   { id: 'property', title: 'Property', icon: DollarSign },
-  { id: 'personal', title: 'Personal', icon: Users },
+  { id: 'personal', title: 'Spouse/Partner', icon: Users },
   { id: 'product', title: 'Product', icon: Calculator },
 ]
 
@@ -42,7 +42,7 @@ export function ReverseCalculator() {
   const [currentStep, setCurrentStep] = useState(0)
   const [formData, setFormData] = useState<FormData>({
     province: '',
-    city: '',
+    postalCode: '',
     propertyValue: 0,
     mortgageBalance: 0,
     primaryAge: 0,
@@ -80,7 +80,7 @@ export function ReverseCalculator() {
     try {
       const inputs: CalculationInputs = {
         province: formData.province,
-        city: formData.city,
+        postalCode: formData.postalCode,
         propertyValue: formData.propertyValue,
         mortgageBalance: formData.mortgageBalance,
         primaryAge: formData.primaryAge,
@@ -101,12 +101,12 @@ export function ReverseCalculator() {
 
   const isStepValid = () => {
     switch (currentStep) {
-      case 0: // Location
-        return formData.province && formData.city
+      case 0: // Location & Age
+        return formData.province && formData.postalCode && formData.primaryAge >= 55
       case 1: // Property
         return formData.propertyValue > 0
-      case 2: // Personal
-        return formData.primaryAge >= 55 && (!showSecondary || (formData.secondaryAge && formData.secondaryAge >= 55))
+      case 2: // Spouse/Partner
+        return !showSecondary || (formData.secondaryAge && formData.secondaryAge >= 55)
       case 3: // Product
         return formData.productType
       default:
@@ -272,14 +272,14 @@ export function ReverseCalculator() {
             )}
 
             <form onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
-              {/* Step 1: Location */}
+              {/* Step 1: Location & Age */}
               {currentStep === 0 && (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-semibold">Where is your property located?</h3>
+                  <h3 className="text-xl font-semibold">Property Location & Your Age</h3>
                   
                   <div>
                     <label className="block text-sm font-medium mb-2">Province</label>
@@ -299,15 +299,33 @@ export function ReverseCalculator() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">City</label>
+                    <label className="block text-sm font-medium mb-2">Postal Code</label>
                     <input
                       type="text"
-                      value={formData.city}
-                      onChange={(e) => handleInputChange('city', e.target.value)}
+                      value={formData.postalCode}
+                      onChange={(e) => handleInputChange('postalCode', e.target.value.toUpperCase())}
                       className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
-                      placeholder="Enter your city"
+                      placeholder="A1A 1A1"
+                      pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"
+                      maxLength={7}
                       required
                     />
+                    <p className="text-xs text-gray-500 mt-1">Canadian postal code format: A1A 1A1</p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Your Age</label>
+                    <input
+                      type="number"
+                      value={formData.primaryAge || ''}
+                      onChange={(e) => handleInputChange('primaryAge', parseInt(e.target.value) || 0)}
+                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
+                      placeholder="65"
+                      min="55"
+                      max="100"
+                      required
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Must be 55 or older to qualify</p>
                   </div>
                 </motion.div>
               )}
@@ -349,50 +367,50 @@ export function ReverseCalculator() {
                 </motion.div>
               )}
 
-              {/* Step 3: Personal */}
+              {/* Step 3: Spouse/Partner */}
               {currentStep === 2 && (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   className="space-y-6"
                 >
-                  <h3 className="text-xl font-semibold">Personal Information</h3>
+                  <h3 className="text-xl font-semibold">Spouse or Partner Information</h3>
+                  <p className="text-gray-600">For joint applications, we use the younger age to calculate your maximum amount.</p>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-2">Your Age</label>
-                    <input
-                      type="number"
-                      value={formData.primaryAge || ''}
-                      onChange={(e) => handleInputChange('primaryAge', parseInt(e.target.value) || 0)}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
-                      placeholder="65"
-                      min="55"
-                      max="100"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center mb-2">
+                    <label className="flex items-center mb-4">
                       <input
                         type="checkbox"
                         checked={showSecondary}
                         onChange={(e) => setShowSecondary(e.target.checked)}
-                        className="mr-2"
+                        className="mr-3 h-4 w-4"
                       />
-                      <span className="text-sm font-medium">Add spouse/partner age</span>
+                      <span className="text-sm font-medium">I have a spouse/partner who will also be on the mortgage</span>
                     </label>
                     
                     {showSecondary && (
-                      <input
-                        type="number"
-                        value={formData.secondaryAge || ''}
-                        onChange={(e) => handleInputChange('secondaryAge', parseInt(e.target.value) || undefined)}
-                        className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
-                        placeholder="62"
-                        min="55"
-                        max="100"
-                      />
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Spouse/Partner Age</label>
+                        <input
+                          type="number"
+                          value={formData.secondaryAge || ''}
+                          onChange={(e) => handleInputChange('secondaryAge', parseInt(e.target.value) || undefined)}
+                          className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
+                          placeholder="62"
+                          min="55"
+                          max="100"
+                          required
+                        />
+                        <p className="text-xs text-gray-500 mt-1">Must be 55 or older to qualify</p>
+                      </div>
+                    )}
+                    
+                    {!showSecondary && (
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <p className="text-sm text-blue-700">
+                          ✓ Single applicant - we&apos;ll use your age ({formData.primaryAge}) for the calculation
+                        </p>
+                      </div>
                     )}
                   </div>
                 </motion.div>

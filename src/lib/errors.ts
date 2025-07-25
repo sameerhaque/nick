@@ -117,7 +117,10 @@ import { z } from 'zod'
 
 export const CalculationInputSchema = z.object({
   province: z.string().min(2, 'Province is required'),
-  city: z.string().min(1, 'City is required'),
+  postalCode: z.string()
+    .min(6, 'Postal code is required')
+    .max(7, 'Invalid postal code format')
+    .regex(/^[A-Z][0-9][A-Z]\s?[0-9][A-Z][0-9]$/i, 'Please enter a valid Canadian postal code (A1A 1A1)'),
   propertyValue: z.number()
     .min(200000, 'Property value must be at least $200,000')
     .max(5000000, 'Property value cannot exceed $5,000,000'),

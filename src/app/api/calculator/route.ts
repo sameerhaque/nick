@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       clientId: clientId.substring(0, 8) + '***', // Partial IP for privacy
       inputs: {
         province: validatedData.province,
-        city: validatedData.city,
+        postalCode: validatedData.postalCode,
         propertyValue: validatedData.propertyValue,
         mortgageBalance: validatedData.mortgageBalance,
         primaryAge: validatedData.primaryAge,

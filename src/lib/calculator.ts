@@ -1,6 +1,6 @@
 export interface CalculationInputs {
   province: string
-  city: string
+  postalCode: string
   propertyValue: number
   mortgageBalance: number
   primaryAge: number
