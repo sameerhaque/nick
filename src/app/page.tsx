@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import {
   SeniorHero,
+  CustomerStorySection,
   CalculatorSection,
   WhatIsSection,
   HowItWorks,
@@ -45,6 +46,7 @@ export default function HomePage() {
   return (
     <main id="main">
       <SeniorHero />
+      <CustomerStorySection />
       <CalculatorSection />
       <WhatIsSection />
       <HowItWorks />

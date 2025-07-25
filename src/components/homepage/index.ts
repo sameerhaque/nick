@@ -1,5 +1,6 @@
 // Homepage component exports
 export { SeniorHero } from './SeniorHero'
+export { CustomerStorySection } from './CustomerStorySection'
 export { CalculatorSection } from './CalculatorSection'
 export { WhatIsSection } from './WhatIsSection'
 export { HowItWorks } from './HowItWorks'

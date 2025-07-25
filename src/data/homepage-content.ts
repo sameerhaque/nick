@@ -3,7 +3,7 @@ export const homepageContent = {
   // Hero section - Trust-first approach
   hero: {
     title: "Stay in Your Home. Access Your Equity. Live Comfortably.",
-    subtitle: "If you're 55+ and own your home in Ontario, you may qualify for a reverse mortgage to supplement your retirement income with tax-free funds.",
+    subtitle: "A flexible cushion against rising living costs. If you're 55+ and own your home in Ontario, you may qualify for a reverse mortgage to supplement your retirement income with tax-free funds.",
     phoneNumber: "(416) 555-7378",
     phoneText: "Call for Free Consultation",
     ctaPrimary: {

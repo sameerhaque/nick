@@ -40,7 +40,7 @@ export function SeniorHero() {
                 </h1>
                 
                 <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl leading-relaxed">
-                  Access the wealth you&apos;ve built in your home while continuing to live in it. 
+                  A flexible cushion against rising living costs. Access the wealth you&apos;ve built in your home while continuing to live in it. 
                   No monthly payments. No moving. Just financial freedom.
                 </p>
               </motion.div>
