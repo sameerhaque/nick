@@ -54,9 +54,85 @@ export function ReverseCalculator() {
   const [showSecondary, setShowSecondary] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showLeadForm, setShowLeadForm] = useState(false)
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+
+  const validateField = (field: keyof FormData, value: string | number | undefined): string => {
+    switch (field) {
+      case 'province':
+        return !value ? 'Province is required' : ''
+      case 'postalCode':
+        if (!value) return 'Postal code is required'
+        const postalRegex = /^[A-Z][0-9][A-Z]\s?[0-9][A-Z][0-9]$/i
+        return !postalRegex.test(value as string) ? 'Please enter a valid Canadian postal code (A1A 1A1)' : ''
+      case 'primaryAge':
+        if (!value || value === 0) return 'Age is required'
+        return (value as number) < 55 ? 'Must be 55 or older to qualify' : ''
+      case 'propertyValue':
+        if (!value || value === 0) return 'Property value is required'
+        return (value as number) < 200000 ? 'Property value must be at least $200,000' : ''
+      case 'mortgageBalance':
+        if ((value as number) < 0) return 'Mortgage balance cannot be negative'
+        if (formData.propertyValue && (value as number) >= formData.propertyValue) {
+          return 'Mortgage balance must be less than property value'
+        }
+        return ''
+      case 'secondaryAge':
+        if (showSecondary && (!value || value === 0)) return 'Spouse age is required'
+        if (showSecondary && (value as number) < 55) return 'Must be 55 or older to qualify'
+        return ''
+      default:
+        return ''
+    }
+  }
+
+  const formatCurrency = (value: string): number => {
+    // Remove all non-numeric characters except decimal point
+    const numericValue = value.replace(/[^\d.]/g, '')
+    return parseFloat(numericValue) || 0
+  }
+
+
+  const formatPostalCode = (value: string): string => {
+    // Remove all non-alphanumeric characters
+    const cleaned = value.replace(/[^A-Za-z0-9]/g, '').toUpperCase()
+    
+    // Add space after 3rd character if length > 3
+    if (cleaned.length > 3) {
+      return cleaned.substring(0, 3) + ' ' + cleaned.substring(3, 6)
+    }
+    return cleaned
+  }
 
   const handleInputChange = (field: keyof FormData, value: string | number | undefined) => {
-    setFormData(prev => ({ ...prev, [field]: value }))
+    let processedValue = value
+    
+    // Format postal code
+    if (field === 'postalCode' && typeof value === 'string') {
+      processedValue = formatPostalCode(value)
+    }
+    
+    // Format currency fields
+    if ((field === 'propertyValue' || field === 'mortgageBalance') && typeof value === 'string') {
+      processedValue = formatCurrency(value)
+    }
+    
+    setFormData(prev => ({ ...prev, [field]: processedValue }))
+    
+    // Real-time validation
+    const error = validateField(field, processedValue)
+    setFieldErrors(prev => ({
+      ...prev,
+      [field]: error
+    }))
+    
+    // Also validate mortgage balance when property value changes
+    if (field === 'propertyValue' && formData.mortgageBalance) {
+      const mortgageError = validateField('mortgageBalance', formData.mortgageBalance)
+      setFieldErrors(prev => ({
+        ...prev,
+        mortgageBalance: mortgageError
+      }))
+    }
   }
 
   const handleNext = () => {
@@ -70,6 +146,28 @@ export function ReverseCalculator() {
   const handleBack = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1)
+    }
+  }
+
+  const goToStep = (stepIndex: number) => {
+    // Only allow navigation to completed steps or current step
+    if (stepIndex <= currentStep || isStepCompleted(stepIndex - 1)) {
+      setCurrentStep(stepIndex)
+    }
+  }
+
+  const isStepCompleted = (stepIndex: number) => {
+    switch (stepIndex) {
+      case 0: // Location & Age
+        return formData.province && formData.postalCode && formData.primaryAge >= 55
+      case 1: // Property
+        return formData.propertyValue > 0
+      case 2: // Spouse/Partner
+        return !showSecondary || (formData.secondaryAge && formData.secondaryAge >= 55)
+      case 3: // Product
+        return formData.productType
+      default:
+        return false
     }
   }
 
@@ -236,21 +334,47 @@ export function ReverseCalculator() {
             </p>
           </div>
 
-          {/* Progress Bar */}
+          {/* Enhanced Interactive Progress Bar */}
           <div className="mb-8">
             <div className="flex justify-between items-center mb-4">
               {steps.map((step, index) => {
                 const Icon = step.icon
+                const isActive = index === currentStep
+                const isCompleted = index < currentStep || isStepCompleted(index)
+                const isClickable = index <= currentStep || isStepCompleted(index - 1)
+                
                 return (
                   <div key={step.id} className="flex items-center">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      index <= currentStep ? 'bg-primary-600 text-white' : 'bg-gray-200 text-gray-500'
-                    }`}>
-                      <Icon className="w-5 h-5" />
-                    </div>
+                    <button
+                      onClick={() => goToStep(index)}
+                      disabled={!isClickable}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-200 relative group ${
+                        isActive 
+                          ? 'bg-primary-600 text-white ring-4 ring-primary-100 scale-110' 
+                          : isCompleted
+                          ? 'bg-green-500 text-white hover:bg-green-600 cursor-pointer'
+                          : isClickable
+                          ? 'bg-gray-300 text-gray-600 hover:bg-gray-400 cursor-pointer'
+                          : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                      } ${isClickable ? 'hover:scale-105' : ''}`}
+                    >
+                      {isCompleted && !isActive ? (
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      ) : (
+                        <Icon className="w-5 h-5" />
+                      )}
+                      
+                      {/* Tooltip */}
+                      <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                        {step.title}
+                      </div>
+                    </button>
+                    
                     {index < steps.length - 1 && (
-                      <div className={`w-12 h-0.5 mx-2 ${
-                        index < currentStep ? 'bg-primary-600' : 'bg-gray-200'
+                      <div className={`w-12 h-1 mx-2 rounded-full transition-all duration-300 ${
+                        index < currentStep ? 'bg-green-500' : 'bg-gray-200'
                       }`} />
                     )}
                   </div>
@@ -258,9 +382,15 @@ export function ReverseCalculator() {
               })}
             </div>
             <div className="text-center">
-              <span className="text-sm text-gray-600">
-                Step {currentStep + 1} of {steps.length}: {steps[currentStep].title}
-              </span>
+              <div className="text-sm text-gray-600">
+                Step {currentStep + 1} of {steps.length}: <span className="font-semibold">{steps[currentStep].title}</span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-1 mt-2">
+                <div 
+                  className="bg-primary-600 h-1 rounded-full transition-all duration-300"
+                  style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
+                />
+              </div>
             </div>
           </div>
 
@@ -282,11 +412,17 @@ export function ReverseCalculator() {
                   <h3 className="text-xl font-semibold">Property Location & Your Age</h3>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-2">Province</label>
+                    <label className="block text-sm font-medium mb-2 text-gray-700">Province</label>
                     <select
                       value={formData.province}
                       onChange={(e) => handleInputChange('province', e.target.value)}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
+                      className={`w-full p-3 border rounded-lg transition-all duration-200 ${
+                        fieldErrors.province 
+                          ? 'border-red-300 focus:border-red-500 focus:ring-red-200' 
+                          : formData.province
+                          ? 'border-green-300 focus:border-green-500 focus:ring-green-200'
+                          : 'border-gray-300 focus:border-primary-500 focus:ring-primary-200'
+                      } focus:ring-2 focus:outline-none`}
                       required
                     >
                       <option value="">Select a province</option>
@@ -296,21 +432,59 @@ export function ReverseCalculator() {
                         </option>
                       ))}
                     </select>
+                    {fieldErrors.province && (
+                      <div className="flex items-center mt-1 text-red-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {fieldErrors.province}
+                      </div>
+                    )}
+                    {formData.province && !fieldErrors.province && (
+                      <div className="flex items-center mt-1 text-green-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        Province selected
+                      </div>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Postal Code</label>
+                    <label className="block text-sm font-medium mb-2 text-gray-700">Postal Code</label>
                     <input
                       type="text"
                       value={formData.postalCode}
                       onChange={(e) => handleInputChange('postalCode', e.target.value.toUpperCase())}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
+                      className={`w-full p-3 border rounded-lg transition-all duration-200 ${
+                        fieldErrors.postalCode 
+                          ? 'border-red-300 focus:border-red-500 focus:ring-red-200' 
+                          : formData.postalCode && !fieldErrors.postalCode
+                          ? 'border-green-300 focus:border-green-500 focus:ring-green-200'
+                          : 'border-gray-300 focus:border-primary-500 focus:ring-primary-200'
+                      } focus:ring-2 focus:outline-none`}
                       placeholder="A1A 1A1"
                       pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"
                       maxLength={7}
                       required
                     />
-                    <p className="text-xs text-gray-500 mt-1">Canadian postal code format: A1A 1A1</p>
+                    {fieldErrors.postalCode ? (
+                      <div className="flex items-center mt-1 text-red-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {fieldErrors.postalCode}
+                      </div>
+                    ) : formData.postalCode ? (
+                      <div className="flex items-center mt-1 text-green-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        Valid postal code
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-500 mt-1">Canadian postal code format: A1A 1A1</p>
+                    )}
                   </div>
 
                   <div>
@@ -340,29 +514,71 @@ export function ReverseCalculator() {
                   <h3 className="text-xl font-semibold">Property Information</h3>
                   
                   <div>
-                    <label className="block text-sm font-medium mb-2">Estimated Property Value</label>
-                    <input
-                      type="number"
-                      value={formData.propertyValue || ''}
-                      onChange={(e) => handleInputChange('propertyValue', parseInt(e.target.value) || 0)}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
-                      placeholder="500000"
-                      min="200000"
-                      max="5000000"
-                      required
-                    />
+                    <label className="block text-sm font-medium mb-2 text-gray-700">Estimated Property Value</label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-3 text-gray-500 font-medium">$</span>
+                      <input
+                        type="text"
+                        value={formData.propertyValue ? formData.propertyValue.toLocaleString() : ''}
+                        onChange={(e) => handleInputChange('propertyValue', e.target.value)}
+                        className={`w-full p-3 pl-8 border rounded-lg transition-all duration-200 ${
+                          fieldErrors.propertyValue 
+                            ? 'border-red-300 focus:border-red-500 focus:ring-red-200' 
+                            : formData.propertyValue && !fieldErrors.propertyValue
+                            ? 'border-green-300 focus:border-green-500 focus:ring-green-200'
+                            : 'border-gray-300 focus:border-primary-500 focus:ring-primary-200'
+                        } focus:ring-2 focus:outline-none`}
+                        placeholder="500,000"
+                        required
+                      />
+                    </div>
+                    {fieldErrors.propertyValue ? (
+                      <div className="flex items-center mt-1 text-red-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {fieldErrors.propertyValue}
+                      </div>
+                    ) : formData.propertyValue ? (
+                      <div className="flex items-center mt-1 text-green-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        Property value entered
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-500 mt-1">Minimum $200,000</p>
+                    )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">Current Mortgage Balance</label>
-                    <input
-                      type="number"
-                      value={formData.mortgageBalance || ''}
-                      onChange={(e) => handleInputChange('mortgageBalance', parseInt(e.target.value) || 0)}
-                      className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary-500"
-                      placeholder="0"
-                      min="0"
-                    />
+                    <label className="block text-sm font-medium mb-2 text-gray-700">Current Mortgage Balance</label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-3 text-gray-500 font-medium">$</span>
+                      <input
+                        type="text"
+                        value={formData.mortgageBalance ? formData.mortgageBalance.toLocaleString() : ''}
+                        onChange={(e) => handleInputChange('mortgageBalance', e.target.value)}
+                        className={`w-full p-3 pl-8 border rounded-lg transition-all duration-200 ${
+                          fieldErrors.mortgageBalance 
+                            ? 'border-red-300 focus:border-red-500 focus:ring-red-200' 
+                            : formData.mortgageBalance && !fieldErrors.mortgageBalance
+                            ? 'border-green-300 focus:border-green-500 focus:ring-green-200'
+                            : 'border-gray-300 focus:border-primary-500 focus:ring-primary-200'
+                        } focus:ring-2 focus:outline-none`}
+                        placeholder="0 (if no mortgage)"
+                      />
+                    </div>
+                    {fieldErrors.mortgageBalance ? (
+                      <div className="flex items-center mt-1 text-red-600 text-sm">
+                        <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        {fieldErrors.mortgageBalance}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-gray-500 mt-1">Enter 0 if your home is paid off</p>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -475,10 +691,11 @@ export function ReverseCalculator() {
                 
                 <Button
                   type="submit"
+                  isLoading={isCalculating}
                   disabled={!isStepValid() || isCalculating}
                   className="min-w-32"
                 >
-                  {isCalculating ? 'Calculating...' : currentStep === steps.length - 1 ? 'Calculate' : 'Next'}
+                  {currentStep === steps.length - 1 ? 'Calculate' : 'Next'}
                 </Button>
               </div>
             </form>

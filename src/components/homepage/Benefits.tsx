@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Container, Section } from '@/components/ui'
 import { 
   GraduationCap, 
@@ -107,10 +108,12 @@ export function Benefits() {
                 >
                   <div className="bg-white rounded-3xl overflow-hidden h-full shadow-sm border border-neutral-100 hover:shadow-xl transition-all duration-300 group-hover:border-primary-200">
                     <div className="relative h-48 overflow-hidden">
-                      <img 
+                      <Image 
                         src={scenario.image}
                         alt={`${scenario.persona} - ${scenario.scenario}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                       

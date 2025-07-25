@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Button, Container, Section } from '@/components/ui'
 import { Phone, ArrowRight, CheckCircle } from 'lucide-react'
 import { homepageContent } from '@/data/homepage-content'
@@ -12,10 +13,13 @@ export function SeniorHero() {
     <Section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-neutral-50 to-white">
       {/* Hero background image */}
       <div className="absolute inset-0">
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
           alt="Beautiful modern family home with well-maintained garden"
-          className="w-full h-full object-cover opacity-10"
+          fill
+          className="object-cover opacity-10"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/50" />
       </div>
@@ -95,11 +99,13 @@ export function SeniorHero() {
                 className="space-y-8"
               >
                 {/* Hero Image */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-96">
+                  <Image 
                     src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                     alt="Happy senior couple smiling in their beautiful home"
-                    className="w-full h-96 object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   
                   {/* Overlay with stats */}
@@ -125,11 +131,15 @@ export function SeniorHero() {
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-neutral-200 shadow-lg">
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <img 
-                        src="https://images.unsplash.com/photo-1594824388574-75c802da5cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
-                        alt="Margaret S., satisfied client"
-                        className="w-12 h-12 rounded-full object-cover border-2 border-primary-200"
-                      />
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary-200">
+                        <Image 
+                          src="https://images.unsplash.com/photo-1594824388574-75c802da5cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                          alt="Margaret S., satisfied client"
+                          fill
+                          className="object-cover"
+                          sizes="48px"
+                        />
+                      </div>
                       <div>
                         <div className="font-semibold text-neutral-900">Margaret S.</div>
                         <div className="text-sm text-neutral-600">Age 68 • Ontario</div>
