@@ -4,17 +4,17 @@ import { motion } from 'framer-motion'
 import { Container, Section } from '@/components/ui'
 import { Star, Phone, ArrowRight } from 'lucide-react'
 
-const colorMappings = {
-  rose: {
-    borderAvatar: 'border-rose-200'
-  },
-  blue: {
-    borderAvatar: 'border-blue-200'
-  },
-  green: {
-    borderAvatar: 'border-green-200'
-  }
-} as const
+// const colorMappings = {
+//   rose: {
+//     borderAvatar: 'border-rose-200'
+//   },
+//   blue: {
+//     borderAvatar: 'border-blue-200'
+//   },
+//   green: {
+//     borderAvatar: 'border-green-200'
+//   }
+// } as const
 
 const testimonials = [
   {

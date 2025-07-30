@@ -12,7 +12,7 @@ export function Footer() {
             {/* Company Info */}
             <div className="md:col-span-2">
               <div className="mb-6">
-                <LogoFull size="sm" href="/" />
+                <LogoFull href="/" />
               </div>
               <p className="text-neutral-300 mb-6 leading-relaxed">
                 Helping Ontario seniors access their home equity safely and securely for over 20 years. 

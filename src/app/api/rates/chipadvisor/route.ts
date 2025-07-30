@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { getCurrentRates } from '@/lib/rate-service'
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const { rates, error, fallbackUsed } = await getCurrentRates()
     
@@ -41,7 +41,7 @@ export async function GET(request: NextRequest) {
 }
 
 // Add CORS headers for local development
-export async function OPTIONS(request: NextRequest) {
+export async function OPTIONS() {
   return new Response(null, {
     status: 200,
     headers: {
