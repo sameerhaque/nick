@@ -66,7 +66,9 @@ export function Header() {
       <Container>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <LogoHorizontal size="sm" />
+          <div className="flex-shrink-0">
+            <LogoHorizontal className="h-14 w-[123px]" />
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">

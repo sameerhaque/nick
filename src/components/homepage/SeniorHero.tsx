@@ -101,8 +101,8 @@ export function SeniorHero() {
                 {/* Hero Image */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl h-96">
                   <Image 
-                    src="https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="Happy senior couple smiling in their beautiful home"
+                    src="/images/hero_image.jpg"
+                    alt="Multi-generational family gathered together on porch"
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -131,18 +131,9 @@ export function SeniorHero() {
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-neutral-200 shadow-lg">
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary-200">
-                        <Image 
-                          src="/images/margaret-s.jpg"
-                          alt="Margaret S., satisfied client"
-                          fill
-                          className="object-cover"
-                          sizes="48px"
-                        />
-                      </div>
                       <div>
-                        <div className="font-semibold text-neutral-900">Margaret S.</div>
-                        <div className="text-sm text-neutral-600">Age 68 • Ontario</div>
+                        <div className="font-semibold text-neutral-900">Sarah M.</div>
+                        <div className="text-sm text-neutral-600">Age 72 • Ontario</div>
                       </div>
                     </div>
                     

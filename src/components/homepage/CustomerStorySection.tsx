@@ -59,15 +59,6 @@ export function CustomerStorySection() {
               {/* Customer Profile */}
               <Card className="p-6 bg-white border-l-4 border-l-blue-600">
                 <div className="flex items-center gap-4 mb-6">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
-                    alt="Confident senior woman at home, representing Sarah M. who found financial freedom through reverse mortgage"
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-blue-200 shadow-md"
-                    priority={false}
-                    unoptimized={false}
-                  />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{customerStory.name}</h3>
                     <p className="text-gray-600">Age {customerStory.age} • {customerStory.location}</p>
@@ -150,14 +141,6 @@ export function CustomerStorySection() {
               {/* Customer Quote */}
               <Card className="p-8 bg-white border-2 border-blue-100">
                 <div className="text-center mb-6">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
-                    alt="Joyful senior woman with genuine smile, radiating confidence and satisfaction from financial security"
-                    width={80}
-                    height={80}
-                    className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-blue-200 shadow-lg"
-                  />
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Customer Testimonial</h3>
                 </div>
 
                 <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 italic">

@@ -84,11 +84,6 @@ export function ClientTestimonials() {
               className="bg-white rounded-3xl p-8 shadow-sm border border-neutral-100 hover:shadow-lg transition-all duration-300 group"
             >
               <div className="flex items-center gap-4 mb-6">
-                <img 
-                  src={testimonial.image}
-                  alt={`${testimonial.name}, satisfied client`}
-                  className={`w-14 h-14 rounded-full object-cover shadow-md border-4 ${colorMappings[testimonial.accentColor].borderAvatar}`}
-                />
                 <div>
                   <h3 className="font-serif font-bold text-neutral-900 text-lg">
                     {testimonial.name}

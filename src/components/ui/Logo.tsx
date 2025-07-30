@@ -3,73 +3,45 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 interface LogoProps {
-  variant?: 'full' | 'horizontal' | 'icon'
-  size?: 'sm' | 'md' | 'lg'
   className?: string
   href?: string
 }
 
 export function Logo({ 
-  variant = 'horizontal', 
-  size = 'md', 
   className = '',
   href = '/'
 }: LogoProps) {
-  const dimensions = {
-    full: {
-      sm: { width: 200, height: 120 },
-      md: { width: 320, height: 192 },
-      lg: { width: 400, height: 240 }
-    },
-    horizontal: {
-      sm: { width: 233, height: 42 },
-      md: { width: 292, height: 52 },
-      lg: { width: 350, height: 63 }
-    },
-    icon: {
-      sm: { width: 32, height: 32 },
-      md: { width: 44, height: 44 },
-      lg: { width: 56, height: 56 }
-    }
-  }
-
-  const logoSrc = {
-    full: '/logos/reversewayhome-logo.png',
-    horizontal: '/logos/reversewayhome-logo.png',
-    icon: '/logos/reversewayhome-logo.png'
-  }
-
-  const { width, height } = dimensions[variant][size]
-  const src = logoSrc[variant]
-
   const logoElement = (
     <Image
-      src={src}
+      src="/logos/reversewayhome-logo.png"
       alt="Reverse Way Home - Access Your Home Equity, Stay in Your Home"
-      width={width}
-      height={height}
-      className={`h-auto ${className}`}
+      fill
+      className="object-contain"
       priority
     />
   )
 
   if (href) {
     return (
-      <Link href={href} className="inline-block">
+      <Link href={href} className={`relative inline-block ${className}`}>
         {logoElement}
       </Link>
     )
   }
 
-  return logoElement
+  return (
+    <div className={`relative inline-block ${className}`}>
+      {logoElement}
+    </div>
+  )
 }
 
 // Export component variations for convenience
-export const LogoFull = (props: Omit<LogoProps, 'variant'>) => 
-  <Logo {...props} variant="full" />
+export const LogoFull = (props: LogoProps) => 
+  <Logo {...props} />
 
-export const LogoHorizontal = (props: Omit<LogoProps, 'variant'>) => 
-  <Logo {...props} variant="horizontal" />
+export const LogoHorizontal = (props: LogoProps) => 
+  <Logo {...props} />
 
-export const LogoIcon = (props: Omit<LogoProps, 'variant'>) => 
-  <Logo {...props} variant="icon" />
+export const LogoIcon = (props: LogoProps) => 
+  <Logo {...props} />
