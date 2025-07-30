@@ -182,8 +182,9 @@ export function ComplianceWrapper({ children, requiresDisclaimer = false }: {
         <div className="opacity-25 pointer-events-none">
           {children}
         </div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-white rounded-lg p-6 shadow-lg border max-w-md">
+        <div className="absolute inset-0 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg p-6 shadow-xl border max-w-2xl w-full mx-auto"
+               style={{ maxHeight: '90vh', overflowY: 'auto' }}>
             <ComplianceDisclaimer 
               type="calculator" 
               placement="inline" 

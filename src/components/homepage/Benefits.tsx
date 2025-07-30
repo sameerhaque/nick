@@ -25,7 +25,7 @@ const lifeScenarios = [
     icon: Stethoscope,
     amount: '$2,300',
     outcome: 'Covers all health expenses + emergency fund',
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+    image: '/images/margaret-s.jpg'
   },
   {
     id: 'family',
@@ -38,7 +38,7 @@ const lifeScenarios = [
     icon: GraduationCap,
     amount: '$3,100',
     outcome: 'Supporting education while maintaining independence',
-    image: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+    image: '/images/robert-linda.jpg'
   },
   {
     id: 'home',
@@ -51,7 +51,7 @@ const lifeScenarios = [
     icon: Wrench,
     amount: '$2,100',
     outcome: 'Safe, comfortable home for the long term',
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+    image: '/images/james-r.jpg'
   },
   {
     id: 'freedom',
@@ -64,20 +64,20 @@ const lifeScenarios = [
     icon: Plane,
     amount: '$2,700',
     outcome: 'Living retirement dreams without financial stress',
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+    image: '/images/dorothy-k.jpg'
   }
 ]
 
 export function Benefits() {
   return (
-    <Section className="py-24 bg-gradient-to-b from-white to-neutral-50">
+    <Section className="bg-gradient-to-b from-white to-neutral-50">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-16 lg:mb-20"
         >
           <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 mb-6 border border-primary-100">
             <Coins className="w-4 h-4 text-primary-600" />
@@ -93,7 +93,7 @@ export function Benefits() {
         </motion.div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-20">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16 lg:mb-20">
             {lifeScenarios.map((scenario, index) => {
               const Icon = scenario.icon
               
@@ -106,8 +106,8 @@ export function Benefits() {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="group cursor-pointer"
                 >
-                  <div className="bg-white rounded-3xl overflow-hidden h-full shadow-sm border border-neutral-100 hover:shadow-xl transition-all duration-300 group-hover:border-primary-200">
-                    <div className="relative h-48 overflow-hidden">
+                  <div className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden h-full shadow-sm border border-neutral-100 hover:shadow-xl transition-all duration-300 group-hover:border-primary-200">
+                    <div className="relative h-44 lg:h-48 overflow-hidden">
                       <Image 
                         src={scenario.image}
                         alt={`${scenario.persona} - ${scenario.scenario}`}
@@ -125,13 +125,13 @@ export function Benefits() {
                       </div>
                     </div>
                     
-                    <div className="p-8">
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center shadow-lg">
-                          <Icon className="w-7 h-7 text-white" />
+                    <div className="p-6 lg:p-8">
+                      <div className="flex items-start gap-3 lg:gap-4 mb-6">
+                        <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg">
+                          <Icon className="w-6 h-6 lg:w-7 lg:h-7 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-serif font-bold text-neutral-900 mb-1">{scenario.persona}</h3>
+                          <h3 className="text-lg lg:text-xl font-serif font-bold text-neutral-900 mb-1">{scenario.persona}</h3>
                           <p className="text-neutral-500 text-sm">Age {scenario.age} • {scenario.location}</p>
                           <div className="text-xs text-primary-600 font-medium mt-1 uppercase tracking-wide">
                             {scenario.scenario}
@@ -188,10 +188,10 @@ export function Benefits() {
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
-                    href="tel:(416) 555-7378"
+                    href="tel:416-573-2641"
                     className="inline-flex items-center justify-center gap-3 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                   >
-                    Call (416) 555-7378
+                    Call 416-573-2641
                   </a>
                   <a 
                     href="/calculator"

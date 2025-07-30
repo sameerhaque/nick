@@ -1,39 +1,30 @@
-<svg width="280" height="50" viewBox="0 0 280 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="420" height="80" viewBox="0 0 420 80" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- House Icon -->
-  <g transform="translate(5, 5)">
-    <!-- House Base -->
-    <rect x="4" y="18" width="24" height="18" fill="#2563eb" rx="1.5"/>
-    <!-- Roof -->
-    <path d="M1 20 L16 8 L31 20 L28 20 L16 10 L4 20 Z" fill="#1d4ed8"/>
-    <!-- Door -->
-    <rect x="13" y="26" width="6" height="10" fill="#ffffff" rx="0.5"/>
-    <!-- Door Handle -->
-    <circle cx="17.5" cy="31" r="0.8" fill="#2563eb"/>
-    <!-- Windows -->
-    <rect x="7" y="22" width="4.5" height="4.5" fill="#ffffff" rx="0.5"/>
-    <rect x="20.5" y="22" width="4.5" height="4.5" fill="#ffffff" rx="0.5"/>
-    <!-- Window Frames -->
-    <line x1="9.25" y1="22" x2="9.25" y2="26.5" stroke="#2563eb" stroke-width="0.4"/>
-    <line x1="7" y1="24.25" x2="11.5" y2="24.25" stroke="#2563eb" stroke-width="0.4"/>
-    <line x1="22.75" y1="22" x2="22.75" y2="26.5" stroke="#2563eb" stroke-width="0.4"/>
-    <line x1="20.5" y1="24.25" x2="25" y2="24.25" stroke="#2563eb" stroke-width="0.4"/>
+  <g transform="translate(15, 15)">
+    <!-- Main house structure -->
+    <path d="M0 30 L20 10 L40 30 L40 50 L0 50 Z" fill="#2D7A8C"/>
+    <!-- Roof highlight -->
+    <path d="M4 30 L20 14 L36 30 Z" fill="#368DA0"/>
     <!-- Chimney -->
-    <rect x="22" y="12" width="3" height="9" fill="#6b7280" rx="0.3"/>
+    <rect x="28" y="18" width="4" height="12" fill="#D49C47"/>
+    <!-- Door -->
+    <rect x="16" y="38" width="8" height="12" fill="#D49C47"/>
+    <!-- Windows -->
+    <rect x="6" y="32" width="6" height="6" fill="#D49C47"/>
+    <rect x="28" y="32" width="6" height="6" fill="#D49C47"/>
+    <!-- Window frames -->
+    <rect x="7" y="33" width="4" height="4" fill="white"/>
+    <rect x="29" y="33" width="4" height="4" fill="white"/>
   </g>
   
-  <!-- Arrow indicating "reverse" direction -->
-  <g transform="translate(38, 22)">
-    <path d="M0 3 L6 0 L6 1.5 L10 1.5 L10 4.5 L6 4.5 L6 6 Z" fill="#f59e0b"/>
-  </g>
+  <!-- Curved swoosh arrow -->
+  <path d="M15 60 Q45 40 75 55" stroke="#D49C47" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M68 52 L78 55 L68 58 Z" fill="#D49C47"/>
   
-  <!-- Company Name -->
-  <g transform="translate(60, 12)">
-    <!-- "Reverse Way Home" in one line -->
-    <text x="0" y="18" font-family="'Lora', serif" font-size="20" font-weight="700" fill="#2563eb">Reverse</text>
-    <text x="85" y="18" font-family="'Lora', serif" font-size="20" font-weight="700" fill="#f59e0b">Way</text>
-    <text x="130" y="18" font-family="'Lora', serif" font-size="20" font-weight="700" fill="#2563eb">Home</text>
-    
-    <!-- Tagline -->
-    <text x="0" y="35" font-family="'Lato', sans-serif" font-size="10" fill="#6b7280">Access Your Home Equity • Stay in Your Home</text>
+  <!-- Company Text -->
+  <g transform="translate(110, 25)">
+    <!-- REVERSE WAY HOME in horizontal layout -->
+    <text x="0" y="20" fill="#2D7A8C" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="1px">REVERSE</text>
+    <text x="150" y="20" fill="#D49C47" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="1px">WAY HOME</text>
   </g>
 </svg>

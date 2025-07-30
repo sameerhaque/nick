@@ -246,11 +246,11 @@ export function FAQ() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:(855) 555-7378"
+                href="tel:416-573-2641"
                 className="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
               >
                 <Phone className="w-5 h-5" />
-                Let&apos;s Talk: (855) 555-7378
+                Let&apos;s Talk: 416-573-2641
               </a>
               
               <a 

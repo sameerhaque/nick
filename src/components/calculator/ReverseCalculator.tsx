@@ -238,59 +238,28 @@ export function ReverseCalculator() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl mx-auto"
           >
-            <Card className="text-center p-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Calculator className="w-8 h-8 text-green-600" />
+            <Card className="text-center p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calculator className="w-6 h-6 text-green-600" />
               </div>
               
-              <h3 className="text-3xl font-bold mb-4">Your Estimated Amount</h3>
+              <h3 className="text-2xl font-bold mb-3">Your Estimated Amount</h3>
               
-              <div className="text-5xl font-bold text-primary-600 mb-2">
+              <div className="text-4xl font-bold text-primary-600 mb-3">
                 ${result.estimatedAmount.toLocaleString()}
               </div>
               
-              <p className="text-sm text-gray-500 mb-6">
-                Initial estimate • Subject to approval • Interest will accrue
+              <p className="text-sm text-gray-500 mb-4">
+                Estimate • Subject to approval
               </p>
 
               {result.warnings && result.warnings.length > 0 && (
-                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
-                  <h4 className="font-semibold text-amber-800 mb-2">Important Considerations:</h4>
-                  {result.warnings.map((warning, index) => (
-                    <p key={index} className="text-sm text-amber-700">{warning}</p>
-                  ))}
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                  <p className="text-sm text-amber-700">{result.warnings[0]}</p>
                 </div>
               )}
               
-              <p className="text-gray-600 mb-8">
-                This is an estimate only. Your actual amount will depend on a professional appraisal, 
-                current interest rates, and underwriting approval. <strong>Interest will accrue over time, 
-                reducing your available equity.</strong>
-              </p>
-
-              <div className="bg-gray-50 rounded-lg p-6 mb-8">
-                <h4 className="font-semibold mb-4">Calculation Summary</h4>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <span className="text-gray-600">Property Value:</span>
-                    <div className="font-semibold">${formData.propertyValue.toLocaleString()}</div>
-                  </div>
-                  <div>
-                    <span className="text-gray-600">Mortgage Balance:</span>
-                    <div className="font-semibold">${formData.mortgageBalance.toLocaleString()}</div>
-                  </div>
-                  <div>
-                    <span className="text-gray-600">Primary Age:</span>
-                    <div className="font-semibold">{formData.primaryAge} years</div>
-                  </div>
-                  <div>
-                    <span className="text-gray-600">Max LTV:</span>
-                    <div className="font-semibold">{(result.maxLTV * 100).toFixed(1)}%</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
                 <Button 
                   size="lg" 
                   className="group"
@@ -311,6 +280,37 @@ export function ReverseCalculator() {
                   Start Over
                 </Button>
               </div>
+
+              {/* Compact Summary - Collapsible */}
+              <details className="mt-6 text-left">
+                <summary className="cursor-pointer text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors">
+                  View Calculation Details
+                </summary>
+                <div className="mt-3 pt-3 border-t border-gray-200">
+                  <div className="grid grid-cols-2 gap-3 text-sm mb-4">
+                    <div>
+                      <span className="text-gray-600">Property Value:</span>
+                      <div className="font-semibold">${formData.propertyValue.toLocaleString()}</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Mortgage Balance:</span>
+                      <div className="font-semibold">${formData.mortgageBalance.toLocaleString()}</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Primary Age:</span>
+                      <div className="font-semibold">{formData.primaryAge} years</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-600">Max LTV:</span>
+                      <div className="font-semibold">{(result.maxLTV * 100).toFixed(1)}%</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    This estimate depends on a professional appraisal, current interest rates, and underwriting approval. 
+                    <strong> Interest will accrue over time.</strong>
+                  </p>
+                </div>
+              </details>
             </Card>
           </motion.div>
         </Container>

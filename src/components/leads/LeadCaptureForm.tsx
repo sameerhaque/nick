@@ -171,7 +171,7 @@ export function LeadCaptureForm({ calculationId, estimatedAmount, onSubmit }: Le
                 {...register('phone')}
                 type="tel"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="(555) 123-4567"
+                placeholder="(416) 573-2641"
               />
               {errors.phone && (
                 <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>

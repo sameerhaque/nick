@@ -181,7 +181,7 @@ export function ComparisonSection() {
               Try Our Calculator
             </a>
             <a
-              href="tel:(416) 555-7378"
+              href="tel:416-573-2641"
               className="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
             >
               Speak with an Expert

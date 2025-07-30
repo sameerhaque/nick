@@ -4,7 +4,7 @@ export const homepageContent = {
   hero: {
     title: "Stay in Your Home. Access Your Equity. Live Comfortably.",
     subtitle: "A flexible cushion against rising living costs. If you're 55+ and own your home in Ontario, you may qualify for a reverse mortgage to supplement your retirement income with tax-free funds.",
-    phoneNumber: "(416) 555-7378",
+    phoneNumber: "416-573-2641",
     phoneText: "Call for Free Consultation",
     ctaPrimary: {
       text: "Calculate Your Amount",
@@ -279,14 +279,14 @@ export const homepageContent = {
   contact: {
     title: "Get Your Questions Answered",
     subtitle: "Speak with a licensed professional or request your free information kit.",
-    phoneNumber: "(855) 555-7378",
+    phoneNumber: "416-573-2641",
     phoneHours: "Mon-Fri 8AM-8PM, Sat 9AM-5PM EST",
     options: [
       {
         id: "phone",
         title: "Call for Immediate Help",
         description: "Speak with a licensed loan officer right now",
-        action: "Call (855) 555-7378",
+        action: "Call 416-573-2641",
         icon: "Phone",
         primary: true
       },

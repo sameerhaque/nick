@@ -221,7 +221,7 @@ export function PartnerLeadForm() {
                   {...register('phone')}
                   type="tel"
                   className="input-base"
-                  placeholder="(555) 123-4567"
+                  placeholder="(416) 573-2641"
                 />
               </div>
 

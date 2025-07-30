@@ -24,17 +24,17 @@ export function Footer() {
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-secondary-400" />
                   <a 
-                    href="tel:(416) 555-7378"
-                    className="text-white hover:text-secondary-400 transition-colors"
+                    href="tel:416-573-2641"
+                    className="text-white hover:text-secondary-400 focus:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm"
                   >
-                    (416) 555-7378
+                    416-573-2641
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-secondary-400" />
                   <a 
                     href="mailto:info@reversewayhome.com"
-                    className="text-white hover:text-secondary-400 transition-colors"
+                    className="text-white hover:text-secondary-400 focus:text-secondary-400 focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm"
                   >
                     info@reversewayhome.com
                   </a>
@@ -50,68 +50,68 @@ export function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
+            <nav aria-labelledby="quick-links-heading">
+              <h3 id="quick-links-heading" className="font-bold text-lg mb-4">Quick Links</h3>
+              <ul className="space-y-2" role="list">
                 <li>
-                  <a href="#how-it-works" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="#how-it-works" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     How It Works
                   </a>
                 </li>
                 <li>
-                  <a href="#benefits" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="#benefits" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Benefits
                   </a>
                 </li>
                 <li>
-                  <a href="#faq" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="#faq" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <a href="/calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/calculator" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Calculator
                   </a>
                 </li>
                 <li>
-                  <a href="/partners" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/partners" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Partners
                   </a>
                 </li>
               </ul>
-            </div>
+            </nav>
 
             {/* Resources */}
-            <div>
-              <h3 className="font-bold text-lg mb-4">Resources</h3>
-              <ul className="space-y-2">
+            <nav aria-labelledby="resources-heading">
+              <h3 id="resources-heading" className="font-bold text-lg mb-4">Resources</h3>
+              <ul className="space-y-2" role="list">
                 <li>
-                  <a href="/calculator" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/calculator" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Loan Calculator
                   </a>
                 </li>
                 <li>
-                  <a href="/blog" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/blog" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Educational Blog
                   </a>
                 </li>
                 <li>
-                  <a href="/testimonials" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/testimonials" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Client Stories
                   </a>
                 </li>
                 <li>
-                  <a href="/about" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/about" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="/contact" className="text-neutral-300 hover:text-white transition-colors">
+                  <a href="/contact" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Contact
                   </a>
                 </li>
               </ul>
-            </div>
+            </nav>
           </div>
         </div>
 
@@ -124,13 +124,13 @@ export function Footer() {
                 FSRA Licensed | Equal Housing Lender | Licensed by the Financial Services Regulatory Authority of Ontario
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="/privacy" className="hover:text-white transition-colors">
+                <a href="/privacy" className="hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                   Privacy Policy
                 </a>
-                <a href="/terms" className="hover:text-white transition-colors">
+                <a href="/terms" className="hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                   Terms of Service
                 </a>
-                <a href="/disclosures" className="hover:text-white transition-colors">
+                <a href="/disclosures" className="hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                   Disclosures
                 </a>
               </div>

@@ -10,7 +10,7 @@ const { hero } = homepageContent
 
 export function SeniorHero() {
   return (
-    <Section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-neutral-50 to-white">
+    <Section className="relative overflow-hidden min-h-screen flex items-center bg-gradient-to-br from-neutral-50 to-white" padding="none">
       {/* Hero background image */}
       <div className="absolute inset-0">
         <Image 
@@ -24,18 +24,18 @@ export function SeniorHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/50" />
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-10 py-20 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left: Main Content */}
-            <div className="lg:col-span-7 space-y-8">
+            <div className="lg:col-span-7 space-y-6 lg:space-y-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-6"
+                className="space-y-4 lg:space-y-6"
               >
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-[0.9] tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 leading-[0.9] tracking-tight">
                   Your home.
                   <br />
                   <span className="text-primary-600">Your equity.</span>
@@ -43,7 +43,7 @@ export function SeniorHero() {
                   Your future.
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-neutral-600 max-w-2xl leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-2xl leading-relaxed">
                   A flexible cushion against rising living costs. Access the wealth you&apos;ve built in your home while continuing to live in it. 
                   No monthly payments. No moving. Just financial freedom.
                 </p>
@@ -53,7 +53,7 @@ export function SeniorHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
                 <a 
                   href={`tel:${hero.phoneNumber.replace(/\D/g, '')}`}
@@ -79,7 +79,7 @@ export function SeniorHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-wrap items-center gap-6 pt-4"
+                className="flex flex-wrap items-center gap-4 lg:gap-6 pt-4"
               >
                 {hero.trustBadges.map((badge, index) => (
                   <div key={index} className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export function SeniorHero() {
                     <div className="flex items-center gap-3">
                       <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary-200">
                         <Image 
-                          src="https://images.unsplash.com/photo-1594824388574-75c802da5cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+                          src="/images/margaret-s.jpg"
                           alt="Margaret S., satisfied client"
                           fill
                           className="object-cover"
@@ -171,7 +171,7 @@ export function SeniorHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 pt-8 border-t border-neutral-200"
+          className="mt-16 lg:mt-20 pt-6 lg:pt-8 border-t border-neutral-200"
         >
           <div className="max-w-4xl mx-auto">
             <p className="text-sm text-neutral-500 leading-relaxed">

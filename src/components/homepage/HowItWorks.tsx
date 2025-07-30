@@ -16,7 +16,7 @@ const iconMap = {
 
 export function HowItWorks() {
   return (
-    <Section className="py-24 bg-neutral-50">
+    <Section background="gray">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -24,7 +24,7 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-12 lg:mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-neutral-900">
             {howItWorks.title}
@@ -36,7 +36,7 @@ export function HowItWorks() {
 
         {/* Process Steps */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-16">
             {howItWorks.steps.map((step, index) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap]
               
@@ -55,12 +55,12 @@ export function HowItWorks() {
                          style={{ transform: 'translateX(-50%)' }} />
                   )}
                   
-                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-200 relative z-10 text-center">
+                  <div className="bg-white rounded-xl lg:rounded-2xl p-6 lg:p-8 shadow-sm border border-neutral-200 relative z-10 text-center">
                     {/* Step number and icon */}
                     <div className="flex items-center justify-center mb-6">
                       <div className="relative">
-                        <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center">
-                          <Icon className="w-8 h-8 text-white" />
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-primary-600 rounded-full flex items-center justify-center">
+                          <Icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
                         <div className="absolute -top-2 -right-2 w-6 h-6 bg-neutral-900 rounded-full flex items-center justify-center">
                           <span className="text-white text-sm font-bold">{step.number}</span>
@@ -68,8 +68,8 @@ export function HowItWorks() {
                       </div>
                     </div>
                     
-                    <h3 className="text-xl font-bold mb-4 text-neutral-900">{step.title}</h3>
-                    <p className="text-neutral-600 leading-relaxed mb-6">{step.description}</p>
+                    <h3 className="text-lg lg:text-xl font-bold mb-3 lg:mb-4 text-neutral-900">{step.title}</h3>
+                    <p className="text-sm lg:text-base text-neutral-600 leading-relaxed mb-6">{step.description}</p>
                     
                     {/* Timeline */}
                     <div className="inline-flex items-center gap-2 bg-neutral-50 rounded-full px-3 py-1">
@@ -101,10 +101,10 @@ export function HowItWorks() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:(855) 555-7378"
+                  href="tel:416-573-2641"
                   className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
-                  Call (855) 555-7378
+                  Call 416-573-2641
                 </a>
                 <a 
                   href="/calculator"

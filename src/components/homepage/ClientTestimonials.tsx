@@ -35,7 +35,7 @@ const testimonials = [
     quote: "We bought a new trailer and have visited every Canadian national park! Frank is healthier than ever, and we&apos;re living the retirement we always dreamed of.",
     impact: "$3,650/month",
     accentColor: 'blue' as const,
-    image: 'https://images.unsplash.com/photo-1609220136736-443140cffec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80'
+    image: '/images/frank-susan.jpg'
   },
   {
     id: 'maria',
@@ -138,11 +138,11 @@ export function ClientTestimonials() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:(416) 555-7378"
+                  href="tel:416-573-2641"
                   className="inline-flex items-center justify-center gap-3 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
                 >
                   <Phone className="w-5 h-5" />
-                  Call (416) 555-7378
+                  Call 416-573-2641
                 </a>
                 
                 <a 

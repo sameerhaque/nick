@@ -38,16 +38,16 @@ export function CalculatorSection() {
             <span className="text-sm font-medium text-primary-800">Free Calculator</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-4 lg:mb-6">
             Discover Your Home&apos;s Hidden Value
           </h2>
           
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 lg:mb-10 max-w-2xl mx-auto">
             Find out how much you could receive from a reverse mortgage in just a few minutes. 
             No commitment, no personal information required.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid sm:grid-cols-3 gap-4 lg:gap-6 mb-8 lg:mb-10">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon
               return (
@@ -57,13 +57,13 @@ export function CalculatorSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                  className="bg-white/60 backdrop-blur-sm rounded-lg lg:rounded-xl p-4 lg:p-6 border border-white/20"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                    <Icon className="w-6 h-6 text-primary-600" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary-100 rounded-lg lg:rounded-xl flex items-center justify-center mb-3 lg:mb-4 mx-auto">
+                    <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-primary-600" />
                   </div>
-                  <h3 className="font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-sm text-gray-600">{benefit.description}</p>
+                  <h3 className="text-sm lg:text-base font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-xs lg:text-sm text-gray-600">{benefit.description}</p>
                 </motion.div>
               )
             })}
@@ -74,7 +74,7 @@ export function CalculatorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center"
           >
             <Button 
               size="lg" 

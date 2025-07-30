@@ -17,13 +17,13 @@ export function Logo({
 }: LogoProps) {
   const dimensions = {
     full: {
-      sm: { width: 150, height: 45 },
-      md: { width: 200, height: 60 },
-      lg: { width: 250, height: 75 }
+      sm: { width: 200, height: 120 },
+      md: { width: 320, height: 192 },
+      lg: { width: 400, height: 240 }
     },
     horizontal: {
-      sm: { width: 210, height: 38 },
-      md: { width: 280, height: 50 },
+      sm: { width: 233, height: 42 },
+      md: { width: 292, height: 52 },
       lg: { width: 350, height: 63 }
     },
     icon: {
@@ -34,9 +34,9 @@ export function Logo({
   }
 
   const logoSrc = {
-    full: '/logos/reversewayhome-logo.svg',
-    horizontal: '/logos/reversewayhome-horizontal.svg',
-    icon: '/logos/reversewayhome-icon.svg'
+    full: '/logos/reversewayhome-logo.png',
+    horizontal: '/logos/reversewayhome-logo.png',
+    icon: '/logos/reversewayhome-logo.png'
   }
 
   const { width, height } = dimensions[variant][size]
