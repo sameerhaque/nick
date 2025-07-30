@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Button, Container, Section } from '@/components/ui'
-import { Phone, ArrowRight, CheckCircle } from 'lucide-react'
+import { Phone, ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { homepageContent } from '@/data/homepage-content'
 
 const { hero } = homepageContent
@@ -68,6 +68,8 @@ export function SeniorHero() {
                   variant="outline"
                   size="lg"
                   className="text-lg px-8 py-4 border-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {hero.ctaPrimary.text}
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -145,7 +147,7 @@ export function SeniorHero() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
-                          <div key={i} className="w-4 h-4 bg-yellow-400 rounded-sm" />
+                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                         ))}
                       </div>
                       <span className="text-lg font-bold text-green-600">$2,350/month</span>

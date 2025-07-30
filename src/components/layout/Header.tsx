@@ -10,6 +10,7 @@ export function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null)
 
   const navigation = [ 
+    { name: 'How It Works', href: '#how-it-works' },
     { name: 'Benefits', href: '#benefits' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '#contact' },
@@ -57,7 +58,14 @@ export function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(href)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
     setIsMenuOpen(false)
   }
 
@@ -76,7 +84,8 @@ export function Header() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-neutral-700 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors duration-200 font-medium rounded-sm px-1 py-1"
+                onClick={(e) => handleLinkClick(e, item.href)}
+                className="text-neutral-700 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors duration-200 font-medium rounded-sm px-1 py-1 cursor-pointer"
               >
                 {item.name}
               </a>
@@ -92,7 +101,7 @@ export function Header() {
               <Phone className="w-4 h-4" />
               <span>416-573-2641</span>
             </a>
-            <Button href="/calculator" size="sm">
+            <Button href="https://www.chipadvisor.ca/financial-illustration-calculator/" size="sm" target="_blank" rel="noopener noreferrer">
               Calculator
             </Button>
           </div>
@@ -129,8 +138,8 @@ export function Header() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-neutral-700 hover:text-primary-600 hover:bg-neutral-50 focus:bg-neutral-50 focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset rounded-md font-medium transition-colors"
-                  onClick={handleLinkClick}
+                  className="block px-3 py-2 text-neutral-700 hover:text-primary-600 hover:bg-neutral-50 focus:bg-neutral-50 focus:text-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-inset rounded-md font-medium transition-colors cursor-pointer"
+                  onClick={(e) => handleLinkClick(e, item.href)}
                 >
                   {item.name}
                 </a>
@@ -146,7 +155,7 @@ export function Header() {
                   <span>416-573-2641</span>
                 </a>
                 <div className="px-3">
-                  <Button href="/calculator" size="sm" className="w-full">
+                  <Button href="https://www.chipadvisor.ca/financial-illustration-calculator/" size="sm" className="w-full" target="_blank" rel="noopener noreferrer">
                     Calculate Your Amount
                   </Button>
                 </div>

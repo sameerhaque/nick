@@ -8,7 +8,7 @@ export const homepageContent = {
     phoneText: "Call for Free Consultation",
     ctaPrimary: {
       text: "Calculate Your Amount",
-      href: "/calculator"
+      href: "https://www.chipadvisor.ca/financial-illustration-calculator/"
     },
     ctaSecondary: {
       text: "Schedule Free Consultation",

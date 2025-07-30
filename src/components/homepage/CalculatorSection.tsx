@@ -78,7 +78,7 @@ export function CalculatorSection() {
           >
             <Button 
               size="lg" 
-              href="/calculator"
+              href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer"
               className="group bg-primary-600 text-white hover:bg-primary-700 border-2 border-primary-600 shadow-lg"
             >
               Calculate Your Amount

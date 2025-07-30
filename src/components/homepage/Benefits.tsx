@@ -70,7 +70,7 @@ const lifeScenarios = [
 
 export function Benefits() {
   return (
-    <Section className="bg-gradient-to-b from-white to-neutral-50">
+    <Section id="benefits" className="bg-gradient-to-b from-white to-neutral-50">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -194,7 +194,7 @@ export function Benefits() {
                     Call 416-573-2641
                   </a>
                   <a 
-                    href="/calculator"
+                    href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-200"
                   >
                     Calculate Your Amount

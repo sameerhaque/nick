@@ -95,7 +95,7 @@ export function FAQ() {
   }
 
   return (
-    <Section className="py-24 bg-gradient-to-b from-blue-50 via-white to-neutral-50">
+    <Section id="faq" className="py-24 bg-gradient-to-b from-blue-50 via-white to-neutral-50">
       <Container>
         {/* Conversational Introduction */}
         <motion.div

@@ -209,7 +209,7 @@ export function CustomerStorySection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/calculator"
+                href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
               >
                 Calculate Your Potential

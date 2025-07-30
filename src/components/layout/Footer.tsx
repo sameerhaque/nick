@@ -42,8 +42,8 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-secondary-400 mt-1" />
                   <div className="text-neutral-300">
-                    <div>123 Bay Street, Suite 1200</div>
-                    <div>Toronto, ON M5K 1A1</div>
+                    <div>4250 Weston Rd (2nd Floor)</div>
+                    <div>Toronto, ON M9L 1W9</div>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/calculator" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
+                  <a href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Calculator
                   </a>
                 </li>
@@ -86,7 +86,7 @@ export function Footer() {
               <h3 id="resources-heading" className="font-bold text-lg mb-4">Resources</h3>
               <ul className="space-y-2" role="list">
                 <li>
-                  <a href="/calculator" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
+                  <a href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer" className="text-neutral-300 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">
                     Loan Calculator
                   </a>
                 </li>
@@ -121,7 +121,10 @@ export function Footer() {
             {/* Legal */}
             <div className="text-sm text-neutral-400">
               <p className="mb-2">
-                FSRA Licensed | Equal Housing Lender | Licensed by the Financial Services Regulatory Authority of Ontario
+FSRA Licensed | Equal Housing Lender | Licensed by Dominion Lending Centres Clear Trust Mortgages
+              </p>
+              <p className="mb-2">
+                Mortgage Agent Level 2 - License #12806
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="/privacy" className="hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 transition-colors rounded-sm">

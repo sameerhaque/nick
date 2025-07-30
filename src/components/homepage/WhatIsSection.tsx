@@ -169,7 +169,7 @@ export function WhatIsSection() {
             </div>
 
             <div className="mt-8 text-center">
-              <Button href="/calculator" className="w-full sm:w-auto">
+              <Button href="https://www.chipadvisor.ca/financial-illustration-calculator/" className="w-full sm:w-auto" target="_blank" rel="noopener noreferrer">
                 Get Your Free Estimate
               </Button>
             </div>

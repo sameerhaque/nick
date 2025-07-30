@@ -16,7 +16,7 @@ const iconMap = {
 
 export function HowItWorks() {
   return (
-    <Section background="gray">
+    <Section id="how-it-works" background="gray">
       <Container>
         {/* Section Header */}
         <motion.div
@@ -107,7 +107,7 @@ export function HowItWorks() {
                   Call 416-573-2641
                 </a>
                 <a 
-                  href="/calculator"
+                  href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-50 text-primary-600 border border-primary-200 px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
                   Calculate Now

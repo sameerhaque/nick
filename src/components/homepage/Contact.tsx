@@ -17,7 +17,7 @@ const iconMap = {
 
 export function Contact() {
   return (
-    <Section className="bg-gradient-to-br from-primary-900 to-primary-700 text-white">
+    <Section id="contact" className="bg-gradient-to-br from-primary-900 to-primary-700 text-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

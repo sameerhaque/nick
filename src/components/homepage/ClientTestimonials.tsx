@@ -51,7 +51,7 @@ const testimonials = [
 
 export function ClientTestimonials() {
   return (
-    <Section className="py-24 bg-gradient-to-b from-neutral-50 to-white">
+    <Section id="testimonials" className="py-24 bg-gradient-to-b from-neutral-50 to-white">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +141,7 @@ export function ClientTestimonials() {
                 </a>
                 
                 <a 
-                  href="/calculator"
+                  href="https://www.chipadvisor.ca/financial-illustration-calculator/" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white/20 transition-all duration-200"
                 >
                   Calculate Your Amount
